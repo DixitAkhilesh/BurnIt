@@ -10,5 +10,5 @@ urlpatterns = [
     path('add', views.add, name = 'add'),
     path('user', views.user, name = 'user'),
     path('workout', views.workout, name = 'workout'),
-    path('chart', views.chart, name = 'chart')
+    path('chart', views.chart , name = 'chart')
 ]

@@ -1,10 +1,13 @@
 import imp
+from re import template
 from unicodedata import name
 from django.shortcuts import render, HttpResponse
+from matplotlib.pyplot import cla
 from home.models import User, Dish, DailyCalorieCount
 from home.models import User, Workout, DailyCalorieCount, DailyCaloriesBurnt
 from json import dumps
 from datetime import datetime
+from django.views.generic import TemplateView
 
 def index(request):
     return render(request, 'index.html')
@@ -83,3 +86,12 @@ def user(request):
 
 def chart(request):
     return render(request , 'chart.html')
+
+# class Chart(TemplateView):
+#     template_name = 'charts.html'
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context["qs"] = DailyCalorieCount.objects.all()
+#         return context
+    
