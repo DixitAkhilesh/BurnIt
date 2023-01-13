@@ -87,11 +87,3 @@ def user(request):
 def chart(request):
     return render(request , 'chart.html')
 
-# class Chart(TemplateView):
-#     template_name = 'charts.html'
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context["qs"] = DailyCalorieCount.objects.all()
-#         return context
-    
